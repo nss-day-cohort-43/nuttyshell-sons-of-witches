@@ -2,8 +2,10 @@ import { getArticles, useArticles } from "./Articles/ArticlesDataProvider.js"
 import { articleList } from "./Articles/ArticlesList.js"
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
+import { eventList } from "./Events/EventsList.js"
 import { Nutshell } from "./Nutshell.js"
 
+console.log("main.js file");
 
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
@@ -14,4 +16,4 @@ import { Nutshell } from "./Nutshell.js"
 */
 
 articleList()
-
+eventList();

@@ -5,15 +5,15 @@ const contentEventTarget = document.querySelector(".events");
 const eventHub = document.querySelector(".dashboard");
 
 const render = (event) => {
-
+    contentEventTarget.innerHTML = useEvents().map
     return eventNameHTML(event)
 };
 
 export const eventList = () => {
     getEvents()
-        .then(getEvents)
-        .then(() => {
-            const appStateEvent = useEvents()
-            render(appStateEvent);
-        })
+        .then(render)
+        // .then(() => {
+        //     const appStateEvent = useEvents()
+        //     render(appStateEvent);
+        // })
 };
