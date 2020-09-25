@@ -3,9 +3,12 @@ import { renderArticleForm } from "./Articles/ArticlesForm.js"
 import { articleList } from "./Articles/ArticlesList.js"
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
+import { eventList } from "./Events/EventsList.js"
 import { dummyLogin } from "./dummyLogin.js"
 import { Nutshell } from "./Nutshell.js"
 import { getTasks, useTasks } from "./Tasks/TasksDataProvider.js"
+
+console.log("main.js file");
 
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
@@ -14,10 +17,11 @@ import { getTasks, useTasks } from "./Tasks/TasksDataProvider.js"
     4. Also, if the user authenticates, and the login form is initially shown
         ensure that the Nutshell component gets rendered
 */
-
 dummyLogin();
+articleList()
+eventList();
 renderArticleForm();
-articleList();
+
 
 
 
