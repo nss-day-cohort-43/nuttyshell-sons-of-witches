@@ -23,7 +23,7 @@
     justify-content: space-between;
 }
 
-.deleteMessage {
+#deleteMessage {
     height: 2em;
     width: 15em;
     font-size: 11pt;
@@ -42,7 +42,8 @@
     height: 2em;
     width: auto;
     font-size: 14pt;
-    font-weight: 800;
+    font-weight: 500;
+
 
 }
 

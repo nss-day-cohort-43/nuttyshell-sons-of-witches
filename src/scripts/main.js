@@ -5,7 +5,8 @@ import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { dummyLogin } from "./dummyLogin.js"
 import { Nutshell } from "./Nutshell.js"
-
+import { renderChat } from './Chat/ChatForm.js'
+import { chatList } from './Chat/ChatList.js'
 
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
@@ -18,4 +19,5 @@ import { Nutshell } from "./Nutshell.js"
 dummyLogin();
 renderArticleForm();
 articleList();
-
+renderChat()
+chatList()

@@ -1,16 +1,26 @@
-const eventHub = document.querySelector(".dashboard")
+import { chatList } from './ChatList.js';
+
+const eventHub = document.querySelector(".container");
+
 const dispatchStateChangeEvent = () => {
     const chatStateChangedEvent = new CustomEvent("chatStateChanged")
     eventHub.dispatchEvent(chatStateChangedEvent)
-}
-let chat
+};
+
+eventHub.addEventListener("chatStateChanged", event => {
+    chatList()
+});
+
+let chat;
+
 export const getChat = () => {
     return fetch(`http://localhost:8088/messages`)
         .then(response => response.json())
         .then(parsedChat => {
             chat = parsedChat
         })
-}
+};
+
 export const saveChat = (chatObj) => {
     return fetch(`http://localhost:8088/messages`, {
         method: "POST",
@@ -19,24 +29,18 @@ export const saveChat = (chatObj) => {
         },
         body: JSON.stringify(chatObj)
     })
-        .then(() => {
-            return getChat()
-        })
+        .then(getChat)
         .then(dispatchStateChangeEvent)
 };
+
 export const useChat = () => {
     return chat.slice()
-}
+};
 
-
-
-
-
-
-export const deleteChat = messageId => {
-    return fetch(`http://localhost:8088/messages/${messageId}`, {
+export const deleteChat = (id) => {
+    return fetch(`http://localhost:8088/messages/${id}`, {
         method: "DELETE"
     })
         .then(getChat)
         .then(dispatchStateChangeEvent)
-}
+};
