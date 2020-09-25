@@ -1,3 +1,6 @@
-const eventHub = document.querySelector(".dashboard")
-const contentTarget = document.querySelector(".news")
+const eventHub = document.querySelector(".container")
+const contentTarget = document.querySelector(".articles")
 
+const render = () => {
+    
+}
