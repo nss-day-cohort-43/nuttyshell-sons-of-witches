@@ -1,19 +1,18 @@
 import { eventNameHTML } from "./Events.js";
 import { useEvents, getEvents } from "./EventsDataProvider.js";
 
-const contentEventTarget = document.querySelector(".events");
+
 const eventHub = document.querySelector(".dashboard");
 
-const render = (event) => {
-    contentEventTarget.innerHTML = useEvents().map
-    return eventNameHTML(event)
+const render = () => {
+    const contentEventTarget = document.querySelector(".events");
+
+    contentEventTarget.innerHTML = useEvents().map(event => {
+        return eventNameHTML(event)
+    }).join("")
 };
 
 export const eventList = () => {
     getEvents()
         .then(render)
-        // .then(() => {
-        //     const appStateEvent = useEvents()
-        //     render(appStateEvent);
-        // })
 };

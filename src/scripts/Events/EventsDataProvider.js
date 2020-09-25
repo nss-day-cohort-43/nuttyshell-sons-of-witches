@@ -3,18 +3,19 @@
 const contentEventTarget = document.querySelector(".events");
 const eventHub = document.querySelector(".dashboard");
 
-let eventsArray = [];
+let events = [];
 
 export const useEvents = () => {
-    return eventsArray.slice();
+    return events.slice()
 };
 
 export const getEvents = () => {
     return fetch(`http://localhost:8088/events?_expand=user`)
         .then(response => response.json())
-        .then(parsedEvents => {
-            events =
-                parsedEvents
+        .then
+        (parsedEvents => {
+            events = parsedEvents
+            console.log(events)
         })
 };
 
