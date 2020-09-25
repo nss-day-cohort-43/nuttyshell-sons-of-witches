@@ -11,7 +11,7 @@ export const useTasks = () => {
 }
 
 export const gettasks = () => {
-    return fetch(`http://local:8088/database?_expand=tasks`)
+    return fetch(`http://local:8088/tasks`)
         .then(response => response.json)
         .then(parsedTasks => {
             taskss = parsedTasks
@@ -19,7 +19,7 @@ export const gettasks = () => {
 }
 
 export const savetasks = (tasksObj) => {
-    return(`http://local:8088/database`, {
+    return(`http://local:8088/tasks`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
