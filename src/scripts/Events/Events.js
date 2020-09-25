@@ -9,5 +9,5 @@ export const eventNameHTML = (eventObj) => {
             <div>Time: ${eventObj.time}</div>
             <div>Location: ${eventObj.location}</div>
         </section>
-    `  
+    `
 };
