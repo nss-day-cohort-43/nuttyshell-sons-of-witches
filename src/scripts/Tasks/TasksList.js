@@ -1,32 +1,32 @@
-const eventHub = document.querySelector(".dashboard")
-import { useCars, getCars } from "./CarsProvider.js";
-import {carsHTML} from "./Cars.js"
+const eventHub = document.querySelector(".constainer")
 
-const eventHub = document.querySelector(".ColorsPreview")
+import { useTasks, getTasks } from "./TasksProvider.js";
+import {tasksHTML} from "./Tasks.js"
 
-export const carList = () => {
-    getCars().then(() =>{
-        const carsArray = useCars();
-        render(carsArray);
+
+export const tasksList = () => {
+    getTasks().then(() =>{
+        const tasksArray = useTasks();
+        render(tasksArray);
     })
 }
 
-eventHub.addEventListener("colorChosen", event =>{
-    if(event.detail.chosenColor !== "0"){ 
-        const matchingCars = useCars().filter(carObj => {
-            return carObj.colorId === event.detail.chosenColor
+eventHub.addEventListener("Task Selected", event =>{
+    if(event.detail.taskMade !== "0"){ 
+        const matchingTasks = useTasks().filter(tasksObj => {
+            return tasksObj.colorId === event.detail.taskMade
         });
-        render(matchingCars)    
+        render(matchingTasks)    
 
     }
-    else render(useCars())
+    else render(useTasks())
     })
   
 
-const render = (carsArray2) => {
-    const domElement = document.querySelector(".carCards")
-    let HTMLArray = carsArray2.map(carObj => {
-        return carsHTML(carObj);
+const render = (tasksArray) => {
+    const domElement = document.querySelector(".tasksCards")
+    let HTMLArray = tasksArray.map(tasksObj => {
+        return tasksHTML(tasksObj);
     })
     domElement.innerHTML = HTMLArray.join("");
 }

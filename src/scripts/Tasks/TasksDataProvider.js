@@ -1,4 +1,4 @@
-const eventHub = document.querySelector(".dashboard")
+const eventHub = document.querySelector(".container")
 
 const dispatchStateChangeEvent = () => {
     const tasksStateChangedEvent = new CustomEvent("tasksStateChanged")
@@ -10,11 +10,11 @@ export const useTasks = () => {
     return tasks.slice()
 }
 
-export const gettasks = () => {
+export const getTasks = () => {
     return fetch(`http://local:8088/tasks`)
         .then(response => response.json)
         .then(parsedTasks => {
-            taskss = parsedTasks
+            tasks = parsedTasks
         })
 }
 

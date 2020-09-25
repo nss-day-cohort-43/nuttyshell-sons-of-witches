@@ -5,4 +5,4 @@ export const tasksHTML = (obj) => {
         <p class="tasksDueDate">Due Date: ${tasksObj.date}</p>
     </section>
 	`
-} 
+}
