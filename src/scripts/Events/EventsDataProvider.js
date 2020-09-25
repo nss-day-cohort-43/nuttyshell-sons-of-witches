@@ -10,10 +10,25 @@ export const useEvents = () => {
     return eventsArray.slice();
 };
 
-export const getEvents = (event) => {
-    // Get a copy of the event array
-    const theEvent = useEvents();
+export const getEvents = () => {
+    return fetch(`http://localhost:8088/events?_expand=user`)
+        .then(response => response.json())
+        .then(parsedEvents => {
+            events = 
+            parsedEvents
+        })
+    }
 
-    // Filter the copy of events to get the specific Event
-
-};
+    export const saveEvents = (eventObj) => {
+        return fetch(`http://localhost:8088/events?_expand=user`, {
+            method: "POST",
+            headers: {
+                "content-type":
+                "application/json"
+            },
+            body: JSON.stringify
+            (eventObj)
+        })
+        .then(getEvents)
+        .then(dispatchEvent)
+    };

@@ -14,8 +14,7 @@ eventHub.addEventListener("change", e => {
     })
     eventHub.dispatchEvent(customEvent);
     }
-})
-
+});
 
 export const eventList = () => {
     getEvents()
