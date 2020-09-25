@@ -1,31 +1,27 @@
-const eventHub = document.querySelector(".dashboard")
+const eventHub = document.querySelector(".container")
 
-const dispatchStateChangeEvent = () => {
-    const newsStateChangedEvent = new CustomEvent("newsStateChanged")
-}
+let articles
 
-let news
-
-export const getNews = () => {
-    return fetch(`http://local:8088/database?_expand=news`)
-        .then(response => response.json)
-        .then(parsedNews => {
-            news = parsedNews
+export const getArticles = () => {
+    return fetch(`http://localhost:8088/articles?_expand=user`)
+        .then(response => response.json())
+        .then(parsedArticles => {
+            articles = parsedArticles
         })
 }
 
-export const saveNews = (newsObj) => {
-    return(`http://local:8088/database`, {
+export const saveArticles = (articlesObj) => {
+    return fetch(`http://localhost:8088/articles?_expand=user`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(newsObj)
+        body: JSON.stringify(articlesObj)
     })
-    .then(getNews)
+    .then(getArticles)
     .then(dispatchStateChangeEvent)
 }
 
-export const useNews = () => {
-    return news.slice()
+export const useArticles = () => {
+    return articles.slice()
 }
