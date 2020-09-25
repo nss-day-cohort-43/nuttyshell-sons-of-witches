@@ -1,5 +1,4 @@
 
-
 export const eventName = (eventObj) => {
     return ` 
         <section id="event-card"
