@@ -1,2 +1,2 @@
-const eventHub = document.querySelector(".dashboard")
+const eventHub = document.querySelector(".container")
 
