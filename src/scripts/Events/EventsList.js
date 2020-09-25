@@ -17,23 +17,23 @@ eventHub.addEventListener("change", e => {
 })
 
 
-export const ColorList = () => {
+export const eventList = () => {
     getEvents()
     .then(() => {
-        const eventArray = useEvents()
-        renderEvents(eventArray);
+        const appStateEvent = useEvents()
+        renderEvents(appStateEvent);
     })
 };
 
-const renderEvents = (theEvents) => {
+const renderEvents = (eventCollection) => {
     contentEventTarget.innerHTML = `
-    <select class="dropdown" id="eventSelect">
-        <option value="0">Select A Event ...</option>
+        <select class="dropdown" id="eventSelect">
+            <option value="0">Select A Event ...</option>
 
-    ${theEvents.map(eventObj => {
-        return `<option value="${eventObj.id}">${eventObj.eventName}</option>`;
-        })
-     }
+        ${ eventCollection.map(eventObj => {
+            return `<option value="${eventObj.id}">${eventObj.eventName}</option>`;
+            })
+        }
      </select>
     `
 };

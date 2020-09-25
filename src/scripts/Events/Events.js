@@ -2,7 +2,9 @@
 
 export const eventName = (eventObj) => {
     return ` 
-    <section id="event-card"${eventObj.id} class="event-card">
-    <h2>${eventObj.name}</h2>
+        <section id="event-card"
+        class="event-card"
+        value="${eventObj.id}">
+        <h2>${eventObj.name}</h2>
     `  
 };
