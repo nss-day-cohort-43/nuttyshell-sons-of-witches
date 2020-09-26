@@ -16,6 +16,19 @@ eventHub.addEventListener("change", e => {
     }
 });
 
+const renderEvents = (eventCollection) => {
+    contentEventTarget.innerHTML = `
+        <select class="dropdown" id="eventSelect">
+            <option value="0">Select A Event ...</option>
+    
+        ${eventCollection.map(eventObj => {
+        return `<option id="eventSelect${eventObj.name}" value="${eventObj.id}">${eventObj.eventName}</option>`;
+    })
+        } 
+     </select> 
+    `
+};
+
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "submitEvent") {
 
@@ -30,15 +43,7 @@ eventHub.addEventListener("click", clickEvent => {
     }
 });
 
-const renderEvents = (eventCollection) => {
-    contentEventTarget.innerHTML = `
-        <select class="dropdown" id="eventSelect">
-            <option value="0">Select A Event ...</option>
+export const renderEventForm = () => {
+
     
-        ${eventCollection.map(eventObj => {
-        return `<option id="eventSelect${eventObj.name}" value="${eventObj.id}">${eventObj.eventName}</option>`;
-    })
-        } 
-     </select> 
-    `
-};
+}
