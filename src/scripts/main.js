@@ -4,6 +4,7 @@ import { articleList } from "./Articles/ArticlesList.js"
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { eventList } from "./Events/EventsList.js"
+import { renderEventForm } from "./Events/EventsForm.js";
 import { dummyLogin } from "./dummyLogin.js"
 import { Nutshell } from "./Nutshell.js"
 import { renderChat } from './Chat/ChatForm.js'
@@ -19,6 +20,7 @@ import { chatList } from './Chat/ChatList.js'
 */
 dummyLogin();
 articleList()
+renderEventForm();
 eventList();
 renderArticleForm();
 renderChat()
