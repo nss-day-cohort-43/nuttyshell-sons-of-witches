@@ -5,5 +5,5 @@
     logged in.
 */
 export const dummyLogin = () => {
-    sessionStorage.setItem("userId", 3)
+    sessionStorage.setItem("userId", 1)
 }
