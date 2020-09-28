@@ -25,4 +25,3 @@ eventList();
 renderArticleForm();
 renderChat()
 chatList()
-

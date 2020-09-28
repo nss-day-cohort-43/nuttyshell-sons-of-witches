@@ -1,3 +1,6 @@
+//Author:  Braxton Shoop
+//Module Purpose:  Establishes connection to API for Fetch, Post, and Delete operations
+
 import { chatList } from './ChatList.js';
 
 const eventHub = document.querySelector(".container");
