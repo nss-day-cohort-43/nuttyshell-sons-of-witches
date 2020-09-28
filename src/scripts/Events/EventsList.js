@@ -10,6 +10,7 @@ eventHub.addEventListener("click", clickEvent => {
     }
 });
 
+//Exports to main.js by calling the list to 
 export const eventList = () => {
     getEvents()
         .then(render)
