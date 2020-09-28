@@ -15,7 +15,7 @@ const render = () => {
 const chatHTML = (chatObject) => {
     console.log(chatObject)
     return `
-        <div class="messagesContainer">${chatObject.message}<div class="chatPoster" id="chatMessagePoster--${chatObject.id}">@${chatObject.userId}</div></div>
+        <div class="messagesContainer">${chatObject.message}<div class="chatPoster" id="chatMessagePoster--${chatObject.id}">@${chatObject.userId}</div><div class="friendTarget"></div></div>
         ${checkUserId(chatObject)}
         `
 };
@@ -52,18 +52,21 @@ eventHub.addEventListener("click", event => {
         console.log("username clicked")
         const [prefix, id] = event.target.id.split("--")
         console.log(id)
-
+        const contentTarget = document.querySelector(".friendTarget");
+        contentTarget.innerHTML = `
+        <button id="addFriend">Add Friend</button>
+        `
     }
 });
 
 
 
-if (messages.id === chatObject.id) {
-    const contentTarget = document.querySelector("#chatMessagePoster");
-    contentTarget.innerHTML = `
-    <button id="addFriend">Add Friend</button>
-    `
-}
-else {
-    ""
-}
+// if (messages.id === chatObject.id) {
+//     const contentTarget = document.querySelector("#chatMessagePoster");
+//     contentTarget.innerHTML = `
+//     <button id="addFriend">Add Friend</button>
+//     `
+// }
+// else {
+//     ""
+// }
