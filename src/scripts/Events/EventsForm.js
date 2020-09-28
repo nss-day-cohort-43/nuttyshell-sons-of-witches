@@ -45,37 +45,39 @@ eventHub.addEventListener("click", clickEvent => {
 
 export const renderEventForm = () => {
     contentEventTarget.innerHTML = `
-    <section class="eventForm">
+    <section class="event-form">
         <fieldset>
         <label>Title</label>
         <input type="text"
-        id="eventTitle"></input>
+        id="event-title"></input>
         </fieldset>
+
         <fieldset>
         <label>Description</label>
         <input type="text"
         id="event-description"></input>
         </fieldset>
+
         <fieldset>
         <label>Location</label>
         <input type="text"
         id="event-location"></input>
         </fieldset>
+
         <fieldset>
         <label>Time</label>
         <input type="time"
         id="event-time"></input>
         </fieldset>
+
         <fieldset>
         <label>Date</label>
         <input type="date"
-        id="event-time"></input>
+        id="event-date"></input>
         </fieldset>
-
     
         <br>
-        <button type="button" id="save" value="save">Save Event</button>
-        
+        <button type="button" id="saveEvent" value="save">Save Event</button>
         <div class="current-event"></div>
     
     `

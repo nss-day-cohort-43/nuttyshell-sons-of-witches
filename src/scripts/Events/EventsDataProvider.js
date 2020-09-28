@@ -9,6 +9,7 @@ eventHub.addEventListener("eventStateChanged", event => {
 
 const dispatchChangeEvent = () => {
     const eventStateChangeEvent = new CustomEvent("eventStateChanged")
+
     eventHub.dispatchEvent(eventStateChangeEvent)
 };
 
@@ -19,20 +20,20 @@ export const useEvents = () => {
 };
 
 export const getEvents = () => {
-    return fetch(`http://localhost:8088/events?_expand=user`)
+    return fetch(`http://localhost:8088/events`)
         .then(response => response.json())
         .then
-        (parsedEvents => {
-            events = parsedEvents
+        (parsedEvent => {
+            events = parsedEvent
             console.log(events)
         })
 };
 
 export const saveEvents = (eventObj) => {
-    return fetch(`http://localhost:8088/events?_expand=user`, {
+    return fetch(`http://localhost:8088/events`, {
         method: "POST",
         headers: {
-        "content-type": "application/json"
+        "Content-Type": "application/json"
         },
         body: JSON.stringify(eventObj)
     })
