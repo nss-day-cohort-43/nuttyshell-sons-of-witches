@@ -1,3 +1,6 @@
+//Author:  Braxton Shoop
+//Module Purpose:  Populates the saved Chat messages on the DOM
+
 import { getChat, useChat, deleteChat } from './ChatDataProvider.js';
 
 const eventHub = document.querySelector(".container");
@@ -10,8 +13,9 @@ const render = () => {
 };
 
 const chatHTML = (chatObject) => {
+    console.log(chatObject)
     return `
-        <div class="messagesContainer">${chatObject.message}</div>
+        <div class="messagesContainer">${chatObject.message}<div class="chatPoster" id="chatMessagePoster--${chatObject.id}">@${chatObject.userId}</div></div>
         ${checkUserId(chatObject)}
         `
 };
@@ -20,9 +24,11 @@ const checkUserId = (message) => {
     let userId = sessionStorage.getItem("userId")
     if (parseInt(userId) === message.userId) {
         return `
-        <button id="editMessage">Edit Message</button >
-        <button id="deleteMessage--${message.id}">Delete Message</button >
-            `
+        <div class="chatButtons">
+            <button id="editMessage">Edit Message</button >
+            <button class="deleteMessage" id="deleteMessage--${message.id}">Delete Message</button >
+        </div>    
+        `
     }
     else {
         return ""
@@ -41,6 +47,23 @@ eventHub.addEventListener("click", event => {
     }
 });
 
+eventHub.addEventListener("click", event => {
+    if (event.target.id.startsWith("chatMessagePoster--")) {
+        console.log("username clicked")
+        const [prefix, id] = event.target.id.split("--")
+        console.log(id)
+
+    }
+});
 
 
-// event.preventDefault()
+
+if (messages.id === chatObject.id) {
+    const contentTarget = document.querySelector("#chatMessagePoster");
+    contentTarget.innerHTML = `
+    <button id="addFriend">Add Friend</button>
+    `
+}
+else {
+    ""
+}

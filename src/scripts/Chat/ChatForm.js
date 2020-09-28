@@ -1,3 +1,6 @@
+//Author:  Braxton Shoop
+//Module Purpose:  Populates the Chat user input form on the DOM
+
 const eventHub = document.querySelector(".container");
 const contentTarget = document.querySelector(".chat");
 
