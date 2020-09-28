@@ -8,6 +8,7 @@ const contentTarget = document.querySelector(".articles")
 export const renderArticleForm = () => {
     contentTarget.innerHTML = `
     <div class="articleForm">
+        <h3>Add News Article</h3>
         <fieldset>
             <label>Title</label>
             <input type="text" id="articleTitle">

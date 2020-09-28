@@ -6,12 +6,10 @@ import { RegisterForm } from "./auth/RegisterForm.js"
 import { eventList } from "./Events/EventsList.js"
 import { dummyLogin } from "./dummyLogin.js"
 import { Nutshell } from "./Nutshell.js"
-import { getTasks, useTasks } from "./Tasks/TasksDataProvider.js"
-import { renderTasksForm } from "./Tasks/TasksForm.js"
-import { tasksList } from "./Tasks/TasksList.js"
+import { renderChat } from './Chat/ChatForm.js'
+import { chatList } from './Chat/ChatList.js'
 
 
-// import { tasksList } from "./Tasks/TasksList.js"
 
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
@@ -24,9 +22,6 @@ dummyLogin();
 articleList()
 eventList();
 renderArticleForm();
-renderTasksForm();
-tasksList();
-getTasks()
-useTasks()
-getArticles()
-useArticles()
+renderChat()
+chatList()
+
