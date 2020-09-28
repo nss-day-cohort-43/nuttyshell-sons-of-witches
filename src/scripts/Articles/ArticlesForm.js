@@ -1,4 +1,4 @@
-import { saveArticles } from "./ArticlesDataProvider.js"
+import { getArticles, saveArticles } from "./ArticlesDataProvider.js"
 
 const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".articles")
@@ -25,7 +25,9 @@ export const renderArticleForm = () => {
             <button id="articleSaveBtn">Save</button>
         </fieldset>
         </div>
-        <div id="articleList"></div>    
+        <h3>Articles</h3>
+        <div id="articleList"></div> 
+
 `
 }
 
@@ -39,7 +41,9 @@ eventHub.addEventListener("click", event => {
             title: document.querySelector("#articleTitle").value,
             summary: document.querySelector("#articleSummary").value,
             URL: document.querySelector("#articleURL").value,
+            date: new Date()
         }
         saveArticles(newArticelObj)
+        renderArticleForm()
     }
 })
