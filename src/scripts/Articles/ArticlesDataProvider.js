@@ -23,7 +23,7 @@ let articles
     to articles
  */
 export const getArticles = () => {
-    return fetch(`http://localhost:8088/articles?_expand=user`)
+    return fetch(`http://localhost:8088/articles?_expand=user&_sort=id&_order=DESC`)
         .then(response => response.json())
         .then(parsedArticles => {
             articles = parsedArticles
@@ -78,8 +78,6 @@ export const editArticle = (id, title, summary, URL) => {
             URL: URL
         })
     })
-    .then(response => response.json())
-    .then(json => console.log(json))
     .then(getArticles)
     .then(dispatchStateChangeEvent)
 }
