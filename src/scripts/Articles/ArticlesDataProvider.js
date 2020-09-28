@@ -23,7 +23,7 @@ let articles
     to articles
  */
 export const getArticles = () => {
-    return fetch(`http://localhost:8088/articles?_expand=user`)
+    return fetch(`http://localhost:8088/articles?_expand=user&_sort=id&_order=DESC`)
         .then(response => response.json())
         .then(parsedArticles => {
             articles = parsedArticles
@@ -37,7 +37,7 @@ export const getArticles = () => {
  */
 export const saveArticles = (articlesObj) => {
     return fetch(`http://localhost:8088/articles`, {
-        method: "POST",
+        method: 'POST',
         headers: {
             "Content-Type": "application/json"
         },
@@ -58,6 +58,25 @@ export const useArticles = () => {
 export const deleteArticle = (id) => {
     return fetch(`http://localhost:8088/articles/${id}`, {
         method: 'DELETE'
+    })
+    .then(getArticles)
+    .then(dispatchStateChangeEvent)
+}
+
+/* Function that edits the article in the database. Then
+    calls for the getArticles function. Then the dispatchStateChangeEvent
+*/
+export const editArticle = (id, title, summary, URL) => {
+    return fetch(`http://localhost:8088/articles/${id}`, {
+        method: 'PATCH',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            title: title,
+            summary: summary,
+            URL: URL
+        })
     })
     .then(getArticles)
     .then(dispatchStateChangeEvent)
