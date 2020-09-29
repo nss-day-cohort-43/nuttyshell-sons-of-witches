@@ -10,6 +10,17 @@
     background-color:#575757;
 }
 
+.chatButtons {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+}
+
+.chatButtonsWithEdit {
+    display: flex;
+    flex-flow: column;
+}
+
 .chatHeader {
     text-align: center;
     font-size: 22pt;
@@ -17,13 +28,55 @@
     color: white;
 }
 
-.chatButtons {
-    display: flex;
-    justify-content: space-around;
-}
-
 .chatPoster {
     text-align: right;
+}
+
+.deleteMessage {
+    height: 2em;
+    width: 12.5em;
+    font-size: 11pt;
+    font-weight: 600;
+    background-color: #FBC6C6;
+}
+
+.editChatContainer {
+    background-color: white;
+    margin-top: -1.5em;
+}
+
+.editMessage {
+    height: 2em;
+    width: 12.5em;
+    font-size: 11pt;
+    font-weight: 600;
+    background-color: lightskyblue;
+}
+
+.friendHeader {
+    text-align: center;
+    font-size: 22pt;
+    margin-top: 1em;
+    color: white;
+}
+
+.friendsList {
+    color: black;
+    background-color: white;
+    line-height: 1.5;
+    overflow: auto;
+}
+
+.friendsContainer {
+    display: flex;
+    flex-flow: column;
+    width: 25em;
+    height: 40em;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    font-weight: 800;
+    background-color:#575757;
 }
 
 .messageControls {
@@ -32,20 +85,18 @@
     justify-content: space-between;
 }
 
-.deleteMessage {
-    height: 2em;
-    width: 12.5em;
-    font-size: 11pt;
-    font-weight: 600;
-    background-color: lightcoral;
+.messagesContainer {
+    width: auto;
+    height: auto;
+    font-size: 14pt;
+    line-height: 1.5;
+    margin-top: 1em;
+    background-color: #FFFFFF;
 }
 
-#editMessage {
-    height: 2em;
-    width: 12.5em;
-    font-size: 11pt;
-    font-weight: 600;
-    background-color: lightskyblue;
+.messagesList {
+    margin-top: 1em;
+    overflow: auto;
 }
 
 .newMessage {
@@ -62,17 +113,4 @@
     width: 10em;
     margin-left: 5.5em;
     background-color: lightgreen;
-}
-
-.messagesContainer {
-    width: auto;
-    height: auto;
-    font-size: 14pt;
-    line-height: 1.5;
-    margin-top: 1em;
-    background-color: #FFFFFF;
-}
-
-.messagesList {
-    overflow: auto;
 }

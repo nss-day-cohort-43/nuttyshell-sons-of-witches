@@ -9,8 +9,8 @@ import { dummyLogin } from "./dummyLogin.js"
 import { Nutshell } from "./Nutshell.js"
 import { renderChat } from './Chat/ChatForm.js'
 import { chatList } from './Chat/ChatList.js'
-
-
+import { friendList } from './Friends/FriendsList.js'
+import { renderFriend } from './Friends/FriendsForm.js'
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
     2. If so, render the Nutshell component
@@ -25,3 +25,5 @@ eventList();
 renderArticleForm();
 renderChat()
 chatList()
+friendList()
+renderFriend()
