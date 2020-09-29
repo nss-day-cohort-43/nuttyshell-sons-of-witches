@@ -82,4 +82,3 @@ export const renderEventForm = () => {
         <div class="current-event"></div>
     `
 };
-

@@ -25,8 +25,6 @@ eventHub.addEventListener("click", clickEvent => {
     }
 });
 
-// here
-
 //Exports function to main.js by calling the list to the Dom
 export const eventList = () => {
     getEvents()
