@@ -71,7 +71,7 @@ eventHub.addEventListener("click", event => {
     the object to be edited.
 */
 eventHub.addEventListener("click", event => {
-    if (event.target.id.startsWith("editArticle")) {
+    if (event.target.id.startsWith("editArticle--")) {
         const [prefix, id] = event.target.id.split("--")
         let x = useArticles().find(article => {
             return parseInt(article.id) === parseInt(id)
