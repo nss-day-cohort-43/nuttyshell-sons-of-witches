@@ -26,3 +26,85 @@ const checkUserId = (eventObj) => {
         return ""
     }
 };
+
+import { eventList } from "./EventsList.js";
+import { editEvent, useEvents } from "./EventsDataProvider.js";
+
+const eventHub = document.querySelector(".dashboard");
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("editButton")) {
+        const [prefix, id] = clickEvent.target.id.split("--")
+        const editEventObj = {
+            id: parseInt(id),
+            title: document.querySelector("#edit-title").value,
+            description: document.querySelector("#edit-description").value,
+            location: document.querySelector("#edit-location").value,
+            time: document.querySelector("#edit-time").value,
+            date: document.querySelector("#edit-date").value,
+        }
+        editEvent(editEventObj.id, editEventObj.title, editEventObj.description, editEventObj.location, editEventObj.time, editEventObj.date)
+    }
+});
+
+eventHub.addEventListener("click", clickEvent =>{
+    if (clickEvent.target.id === "editCancel") {
+        eventList()
+    }
+});
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("editEvent")) {
+        const [prefix, id] = clickEvent.target.id.split("--")
+        let edits = useEvents().find(event => {
+            return parseInt(event.id) === parseInt(id)
+        })
+        contentEditTarget = document.querySelector(`#editedTarget--${id}`)
+        editEventForm(edits)
+    }
+});
+
+let contentEditTarget = [];
+
+const editEventForm = (eventObj) => {
+    contentEditTarget.innerHTML = `
+    <div class="edit-form" id="edited-event>
+    <section class="event-form">
+    <h3>Edit Event</h3>
+        <fieldset>
+        <label>Title</label>
+        <input type="text"
+        id="event-title" value="${eventObj.title}"></input>
+        </fieldset>
+
+        <fieldset>
+        <label>Description</label>
+        <input type="text"
+        id="event-description" value="${eventObj.description}"></input>
+        </fieldset>
+
+        <fieldset>
+        <label>Location</label>
+        <input type="text"
+        id="event-location" value="${eventObj.location}"></input>
+        </fieldset>
+
+        <fieldset>
+        <label>Time</label>
+        <input type="time"
+        id="event-time" value="${eventObj.time}"></input>
+        </fieldset>
+
+        <fieldset>
+        <label>Date</label>
+        <input type="date"
+        id="event-date" value="${eventObj.date}"></input>
+        </fieldset>
+    
+        <br>
+        <button type="button" id="saveEvent--${eventObj.id}" value="save">Save Event</button>
+        <button type="button" id="editCancel">Cancel Edit</button>
+        <div class="current-event"></div>
+    </div>
+    `
+};

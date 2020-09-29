@@ -1,6 +1,5 @@
 import { eventHTML } from "./Events.js";
 import { useEvents, getEvents, deleteEvent, saveEvents, editEvent} from "./EventsDataProvider.js";
-import { editEventForm } from "./EventsForm.js";
 
 const contentTarget = document.querySelector(".events");
 const eventHub = document.querySelector(".dashboard");
@@ -26,37 +25,7 @@ eventHub.addEventListener("click", clickEvent => {
     }
 });
 
-eventHub.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id.startsWith("editButton")) {
-        const [prefix, id] = clickEvent.target.id.split("--")
-        const editEventObj = {
-            id: parseInt(id),
-            title: document.querySelector("#edit-title").value,
-            description: document.querySelector("#edit-description").value,
-            location: document.querySelector("#edit-location").value,
-            time: document.querySelector("#edit-time").value,
-            date: document.querySelector("#edit-date").value,
-        }
-        editEvent(editEventObj.id, editEventObj.title, editEventObj.description, editEventObj.location, editEventObj.time, editEventObj.date)
-    }
-});
-
-eventHub.addEventListener("click", clickEvent =>{
-    if (clickEvent.target.id === "editCancel") {
-        eventList()
-    }
-});
-
-eventHub.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id.startsWith("editEvent")) {
-        const [prefix, id] = clickEvent.target.id.split("--")
-        let edits = useEvents().find(event => {
-            return parseInt(event.id) === parseInt(id)
-        })
-        contentEditTarget = document.querySelector(`#editedTarget--${id}`)
-        editEventForm(edits)
-    }
-});
+// here
 
 //Exports function to main.js by calling the list to the Dom
 export const eventList = () => {
