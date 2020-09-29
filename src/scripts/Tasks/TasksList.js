@@ -1,5 +1,5 @@
 import { saveTasks, getTasks, useTasks, deleteTasks, editTasks, completeTasks } from "./TasksDataProvider.js"
-import { editForm } from "./tasksForm.js"
+import { editForm } from "./TasksForm.js"
 
 const eventHub = document.querySelector(".container")
 
