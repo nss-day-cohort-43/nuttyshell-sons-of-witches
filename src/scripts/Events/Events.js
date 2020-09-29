@@ -6,7 +6,7 @@ export const eventHTML = (eventObj) => {
     return ` 
         <section id="event-card"
         class="event-card">
-            <h2>${eventObj.name}</h2>
+            <h2>${eventObj.title}</h2>
             <div>Description: ${eventObj.description}
             <div>Location: ${eventObj.location}</div>
             <div>Time: ${eventObj.time}</div>

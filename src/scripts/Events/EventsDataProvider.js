@@ -29,7 +29,7 @@ export const getEvents = () => {
 };
 
 export const saveEvents = (eventObj) => {
-    return fetch(`http://localhost:8088/events`, {
+    return fetch(`http://localhost:8088/events?_expand=user&_sort=id&_order=DESC`, {
         method: "POST",
         headers: {
         "Content-Type": "application/json"
