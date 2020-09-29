@@ -1,5 +1,5 @@
 import { eventHTML } from "./Events.js";
-import { useEvents, getEvents, deleteEvent, saveEvents } from "./EventsDataProvider.js";
+import { useEvents, getEvents, deleteEvent, saveEvents, editEvent} from "./EventsDataProvider.js";
 
 const contentTarget = document.querySelector(".events");
 const eventHub = document.querySelector(".dashboard");
@@ -35,7 +35,7 @@ export const eventList = () => {
 const render = () => {
     const contentEventTarget = document.querySelector(".current-event");
     
-    contentEventTarget.innerHTML = useEvents().map(event => {
+contentEventTarget.innerHTML = useEvents().map(event => {
         return eventHTML(event)
     }).join("")
 };

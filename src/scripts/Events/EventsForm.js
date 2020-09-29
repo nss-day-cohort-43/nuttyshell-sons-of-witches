@@ -80,6 +80,5 @@ export const renderEventForm = () => {
         <br>
         <button type="button" id="saveEvent" value="save">Save Event</button>
         <div class="current-event"></div>
-    
     `
 };
