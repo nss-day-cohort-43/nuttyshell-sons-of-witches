@@ -53,7 +53,7 @@ eventHub.addEventListener("click", event => {
             title: document.querySelector("#tasksTitle").value,
             summary: document.querySelector("#tasksSummary").value,
             date: document.querySelector("#tasksDueDate").value,
-            status: false
+            complete: false
         }
         saveTasks(newTasksObj)
     }

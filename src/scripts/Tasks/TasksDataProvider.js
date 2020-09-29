@@ -2,12 +2,14 @@ import { tasksList } from "./TasksList.js"
 
 const eventHub = document.querySelector(".container")
 
+
+
 /* Creation of custom event which allows a refresh to happen
     without the user hitting the refresh command
 */
 const dispatchStateChangeEvent = () => {
     const tasksStateChangedEvent = new CustomEvent("tasksStateChanged")
-
+    
     eventHub.dispatchEvent(tasksStateChangedEvent)
 }
 
@@ -54,8 +56,7 @@ export const useTasks = () => {
 
 /* Function that deletes a task from the database.
     Then calls for the tasks with the getTasks function.
-    Then calls for the dispatchStateChangeEvent function. 
-*/
+    Then calls for the dispatchStateChangeEvent function. */
 export const deleteTasks = (id) => {
     return fetch(`http://localhost:8088/tasks/${id}`, {
         method: 'DELETE'
@@ -68,16 +69,22 @@ export const deleteTasks = (id) => {
     Then calls for the tasks with the getTasks function.
     Then calls for the dispatchStateChangeEvent function. 
 */
-export const editTasks = (tasksObj, id) => {
+export const editTasks = (id, title, summary, date) => {
     return fetch(`http://localhost:8088/tasks/${id}`, {
-    method: "PUT",
+    method: "PATCH",
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(tasksObj)
-  })
-  .then(getTasks)
-  .then(dispatchStateChangeEvent)
+    body: JSON.stringify({
+    title: title,
+    summary: summary,
+    date: date
+    })
+})
+.then(response => response.json())
+.then(json => console.log(json))
+.then(getTasks)
+.then(dispatchStateChangeEvent)
 }
 
 /* Function that changes the stastus of a task from the database.
@@ -86,14 +93,14 @@ export const editTasks = (tasksObj, id) => {
     This should move the task from the from the ongoingTasks box to
     the completedTasks box. 
 */
-export const completeTasks = (tasksObj, id) => {
-    return fetch(`http://localhost:8088/tasks/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(tasksObj)
-  })
-  .then(getTasks)
-  .then(dispatchStateChangeEvent)
-}
+// export const completeTasks = (tasksObj, id) => {
+//     return fetch(`http://localhost:8088/tasks/${id}`, {
+//     method: "PUT",
+//     headers: {
+//       "Content-Type": "application/json"
+//     },
+//     body: JSON.stringify(tasksObj)
+//   })
+//   .then(getTasks)
+//   .then(dispatchStateChangeEvent)
+// }

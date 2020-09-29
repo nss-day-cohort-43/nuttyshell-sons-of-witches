@@ -8,7 +8,9 @@ import { dummyLogin } from "./dummyLogin.js"
 import { Nutshell } from "./Nutshell.js"
 import { renderChat } from './Chat/ChatForm.js'
 import { chatList } from './Chat/ChatList.js'
-
+import { getTasks, useTasks } from "./Tasks/TasksDataProvider.js"
+import { renderTasksForm } from "./Tasks/TasksForm.js"
+import { tasksList } from "./Tasks/TasksList.js"
 
 
 /*
@@ -24,4 +26,7 @@ eventList();
 renderArticleForm();
 renderChat()
 chatList()
-
+renderTasksForm();
+getTasks();
+useTasks();
+tasksList();
