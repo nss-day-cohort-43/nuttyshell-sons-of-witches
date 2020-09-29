@@ -20,6 +20,7 @@ const checkUserId = (eventObj) => {
         return `
         <button type="button" value="delete" id="deleteEvent--${eventObj.id}">Delete Event</button>
         <button type="button" id="editEvent--${eventObj.id}">Edit Event</button>
+        <div id="editedTarget--${eventObj.id}"></div>
         `
     } else {
         return ""

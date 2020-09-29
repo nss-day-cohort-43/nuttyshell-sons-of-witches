@@ -10,7 +10,7 @@ eventHub.addEventListener("eventStateChanged", event => {
 const dispatchChangeEvent = () => {
     const eventStateChangeEvent = new CustomEvent("eventStateChanged")
 
-    eventHub.dispatchEvent(eventStateChangeEvent)
+eventHub.dispatchEvent(eventStateChangeEvent)
 };
 
 let events = [];
@@ -48,3 +48,23 @@ export const deleteEvent = (id) => {
         .then(getEvents)
         .then(dispatchChangeEvent)
 };
+
+export const editEvent = (id, title, description, location, time, date) => {
+    return fetch(`http://localhost:8088/events/${id}`, {
+        method: "PATCH", 
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            title: title,
+            description: description,
+            location: location,
+            time: time,
+            date: date
+        })
+    })
+    .then(getEvents)
+    .then(dispatchChangeEvent)
+};
+
+
