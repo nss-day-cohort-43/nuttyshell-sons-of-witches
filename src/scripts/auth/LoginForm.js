@@ -1,3 +1,5 @@
+
+
 const contentTarget = document.querySelector(".auth--login")
 const eventHub = document.querySelector(".container")
 
@@ -20,7 +22,6 @@ eventHub.addEventListener("click", e => {
             })
     }
 })
-
 
 const render = () => {
     contentTarget.innerHTML += `
