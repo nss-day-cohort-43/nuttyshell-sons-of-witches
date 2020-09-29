@@ -25,7 +25,6 @@ export const getEvents = () => {
         .then
         (parsedEvent => {
             events = parsedEvent
-            console.log(events)
         })
 };
 
