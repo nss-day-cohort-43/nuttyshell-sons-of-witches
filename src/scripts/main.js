@@ -11,12 +11,17 @@ import { Nutshell } from "./Nutshell.js"
     4. Also, if the user authenticates, and the login form is initially shown
         ensure that the Nutshell component gets rendered
 */
-//dummyLogin();
 LoginForm();
 RegisterForm();
 
-if(sessionStorage.getItem("activeUser") > 0){
+const eventHub = document.querySelector(".container")
+
+eventHub.addEventListener("userAuthenticated", event => {
     Nutshell();
-}
+})
+
+
+
+
 
 

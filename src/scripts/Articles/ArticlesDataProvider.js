@@ -2,6 +2,8 @@ import { articleList } from "./ArticlesList.js"
 
 const eventHub = document.querySelector(".container")
 
+
+
 /* Creation of custom event which allows a refresh to happen
     without the user hitting the refresh command
 */

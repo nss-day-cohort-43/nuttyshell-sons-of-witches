@@ -34,7 +34,7 @@ const articleHTML = (articleObject) => {
    the article.
 */
 const checkUserId = (article) => {
-    let userId = sessionStorage.getItem("activeUser")
+    let userId = sessionStorage.getItem("userId")
     if (parseInt(userId) === article.userId) {
         return `
         <button id="deleteArticle--${article.id}">Delete</button>
