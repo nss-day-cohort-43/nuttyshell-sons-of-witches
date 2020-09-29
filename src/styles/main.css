@@ -2,7 +2,7 @@
     display: flex;
     flex-flow: column;
     width: 25em;
-    height: auto;
+    height: 40em;
     border: 2px;
     border-color: black;
     border-style: solid;
@@ -17,24 +17,35 @@
     color: white;
 }
 
+.chatButtons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.chatPoster {
+    text-align: right;
+}
+
 .messageControls {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
 }
 
-#deleteMessage {
+.deleteMessage {
     height: 2em;
-    width: 15em;
+    width: 12.5em;
     font-size: 11pt;
     font-weight: 600;
+    background-color: lightcoral;
 }
 
 #editMessage {
     height: 2em;
-    width: 15em;
+    width: 12.5em;
     font-size: 11pt;
     font-weight: 600;
+    background-color: lightskyblue;
 }
 
 .newMessage {
@@ -43,8 +54,6 @@
     width: auto;
     font-size: 14pt;
     font-weight: 500;
-
-
 }
 
 #submitMessage {
@@ -52,6 +61,7 @@
     font-size: 14pt;
     width: 10em;
     margin-left: 5.5em;
+    background-color: lightgreen;
 }
 
 .messagesContainer {
@@ -61,4 +71,8 @@
     line-height: 1.5;
     margin-top: 1em;
     background-color: #FFFFFF;
+}
+
+.messagesList {
+    overflow: auto;
 }
