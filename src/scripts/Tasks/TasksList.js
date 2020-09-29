@@ -92,10 +92,14 @@ eventHub.addEventListener("click", event => {
     }
 })
 
-
-
 eventHub.addEventListener("click", event => {
-    if(event.target.id === "taskComplete"){
-
+    if(event.target.id.startsWith("completeTasks")){
+        const [prefix, id] = event.target.id.split("--")
+        const completeTasksObj = {
+            id: parseInt(id),
+            // complete: document.querySelector("#completeTasks").value,
+        }
+        completeTasks(completeTasksObj.id)
     }
 })
+

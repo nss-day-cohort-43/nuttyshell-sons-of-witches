@@ -61,6 +61,31 @@ export const editTasks = (id, title, summary, date) => {
 .then(tasksDispatchStateChangeEvent)
 }
 
-export const completeTasks = () => {
+export const completeTasks = (id) => {
+    const completeTasksObj = document.querySelector.tasks.id
+    return fetch(`http://localhost:8088/tasks/${id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            complete: true,       
+        }),
+    })
+        .then (completeTasksObj.remove())
+        .then(response => response.json())
+        .then(getTasks)
+        .then(dispatchStateChangeEvent);
+        
+};
 
-}
+
+
+// var myobj = document.getElementById("demo");
+// myobj.remove();
+
+//   function removeElement(elementId) {
+//     // Removes an element from the document
+//     var element = document.getElementById(elementId);
+//     element.parentNode.removeChild(element);
+// }
