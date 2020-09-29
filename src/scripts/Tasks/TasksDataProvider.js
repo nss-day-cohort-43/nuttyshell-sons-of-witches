@@ -4,7 +4,7 @@ const eventHub = document.querySelector(".container")
 
 let tasks
 
-const dispatchStateChangeEvent = () => {
+export const tasksDispatchStateChangeEvent = () => {
     const tasksStateChangedEvent = new CustomEvent("tasksStateChanged")  
     eventHub.dispatchEvent(tasksStateChangedEvent)
 }
@@ -33,7 +33,7 @@ export const saveTasks = (tasksObj) => {
         body: JSON.stringify(tasksObj)
     })
     .then(getTasks)
-    .then(dispatchStateChangeEvent)
+    .then(tasksDispatchStateChangeEvent)
 }
 
 export const deleteTasks = (id) => {
@@ -41,7 +41,7 @@ export const deleteTasks = (id) => {
         method: 'DELETE'
     })
     .then(getTasks)
-    .then(dispatchStateChangeEvent)
+    .then(tasksDispatchStateChangeEvent)
 }
 
 export const editTasks = (id, title, summary, date) => {
@@ -58,7 +58,7 @@ export const editTasks = (id, title, summary, date) => {
 })
 .then(response => response.json())
 .then(getTasks)
-.then(dispatchStateChangeEvent)
+.then(tasksDispatchStateChangeEvent)
 }
 
 export const completeTasks = () => {

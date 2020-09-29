@@ -65,11 +65,11 @@ eventHub.addEventListener("click", event => {
 eventHub.addEventListener("click", event => {
     if (event.target.id.startsWith("editTasks")) {
         const [prefix, id] = event.target.id.split("--")
-        let x = useTasks().find(tasks => {
+        let tasksEdit = useTasks().find(tasks => {
             return parseInt(tasks.id) === parseInt(id)
         })
         newContentTarget = document.querySelector(`#editFormTarget--${id}`)
-        editForm(x)
+        editForm(tasksEdit)
     }
 })
 

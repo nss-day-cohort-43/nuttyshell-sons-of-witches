@@ -27,6 +27,5 @@ renderArticleForm();
 renderChat()
 chatList()
 renderTasksForm();
-getTasks();
-useTasks();
+
 tasksList();
