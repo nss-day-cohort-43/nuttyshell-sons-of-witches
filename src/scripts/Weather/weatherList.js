@@ -1,5 +1,6 @@
-import { getWeather, useWeather } from "./weatherDataProvider.js";
+import { getWeather, useWeather } from "./WeatherDataProvider.js";
 
+const targetElement = document.querySelector(".weatherPreview");
 const eventHub = document.querySelector(".dashboard");
 
 //
@@ -10,3 +11,18 @@ eventHub.addEventListener("click", clickEvent => {
     }
 
 })
+
+ // Render weather forcast initally
+export const weatherList = () => {
+    getWeather()
+        .then(renderWeather)
+};
+
+// renders the weatherHTML
+const renderWeather = (appWeather) => {
+
+    let HTMLArray = appWeather.map(weatherObj => {
+        return WeatherHTML(weatherObj);
+    })
+    targetElement.innerHTML = HTMLArray.join("")
+};
