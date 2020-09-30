@@ -27,7 +27,6 @@ export const renderArticleForm = () => {
         </div>
         <h3 class="articlesHeader">Articles</h3>
         <div id="articleList"></div> 
-
 `
 }
 
