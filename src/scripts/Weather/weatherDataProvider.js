@@ -5,12 +5,12 @@ const eventHub = document.querySelector(".dashboard");
 
 let weather = [];
 
-// creates a copy of an array
+//A function that creates a copy of an array
 export const useWeather = () => {
     return weather.slice()
 };
 
-//function get the weather from the Api 
+//A function get the weather from the Api "openweathermap" at the zip code provided and is assigned to the weather variable
 export const getWeather = (obj) => {
     return fetch(`https://api.openweathermap.org/data/2.5/forecast?zip=${weatherObj.zip},us&units=imperial&appid=${keys.weatherKey}`)
         .then(response => response.json())
@@ -19,7 +19,7 @@ export const getWeather = (obj) => {
         })
 };
 
-// gets forcast from the weather Api and assigns an arrgument to the weather variable
+//It gets forcast from the weather Api and assigns an arrgument to the weather variable
 export const getCurrentWeather = (postalCode) => {
     let userEvents = useEvents()
     const target = userEvents.find(event => {

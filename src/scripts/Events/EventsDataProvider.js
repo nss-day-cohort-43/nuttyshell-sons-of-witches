@@ -11,7 +11,7 @@ eventHub.addEventListener("eventStateChanged", event => {
 const dispatchChangeEvent = () => {
     const eventStateChangeEvent = new CustomEvent("eventStateChanged")
 
-eventHub.dispatchEvent(eventStateChangeEvent)
+    eventHub.dispatchEvent(eventStateChangeEvent)
 };
 
 let events = [];
@@ -36,7 +36,7 @@ export const saveEvents = (eventObj) => {
     return fetch(`http://localhost:8088/events?_expand=user&_sort=id&_order=DESC`, {
         method: "POST",
         headers: {
-        "Content-Type": "application/json"
+            "Content-Type": "application/json"
         },
         body: JSON.stringify(eventObj)
     })
@@ -56,7 +56,7 @@ export const deleteEvent = (id) => {
 // A function that edit an event in the database.json Then calls for getEvents function. Then the dispatchChangeEvent
 export const editEvent = (id, title, description, location, time, date) => {
     return fetch(`http://localhost:8088/events/${id}`, {
-        method: "PATCH", 
+        method: "PATCH",
         headers: {
             "Content-Type": "application/json"
         },
@@ -68,8 +68,8 @@ export const editEvent = (id, title, description, location, time, date) => {
             date: date
         })
     })
-    .then(getEvents)
-    .then(dispatchChangeEvent)
+        .then(getEvents)
+        .then(dispatchChangeEvent)
 };
 
 

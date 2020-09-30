@@ -50,7 +50,7 @@ eventHub.addEventListener("click", clickEvent => {
 });
 
 // An eventListener that listens for the edit cancel button to be clicked on by the creater of an event to cancel the edit by calling th eventList
-eventHub.addEventListener("click", clickEvent =>{
+eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "edit-cancel") {
         eventList()
     }
