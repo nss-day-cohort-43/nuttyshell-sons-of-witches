@@ -1,3 +1,5 @@
+@import "./Events.css";
+
 .chat {
     display: flex;
     flex-flow: column;

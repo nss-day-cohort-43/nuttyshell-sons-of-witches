@@ -1,7 +1,7 @@
 import { eventList } from "./EventsList.js";
 import { editEvent, useEvents } from "./EventsDataProvider.js";
 
-//Takes the argument from the render function in EvntList.js and creates the the HTML form using the info. that was passed as an argument. 
+//A function that uses the argument from the render function in EventList.js and creates the the HTML form using the info. that was given as an argument. 
 export const eventHTML = (eventObj) => {
     return ` 
         <section id="event-card"
@@ -17,6 +17,7 @@ export const eventHTML = (eventObj) => {
     `
 };
 
+// A function that adds a Delete and Edit button to each Event created by the user logged in specifically to the session. 
 const checkUserId = (eventObj) => {
     let userId = sessionStorage.getItem("userId")
     if (parseInt(userId) === eventObj.userId) {
@@ -32,6 +33,7 @@ const checkUserId = (eventObj) => {
 
 const eventHub = document.querySelector(".dashboard");
 
+// An eventListener to check if the edit button of an event that exist by the user to call the editEvent function.
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("edit2-event")) {
         const [prefix, id] = clickEvent.target.id.split("--")
@@ -47,6 +49,7 @@ eventHub.addEventListener("click", clickEvent => {
     }
 });
 
+// An eventListener that listens for the edit cancel button to be clicked on by the creater of an event to cancel the edit by calling th eventList
 eventHub.addEventListener("click", clickEvent =>{
     if (clickEvent.target.id === "edit-cancel") {
         eventList()
