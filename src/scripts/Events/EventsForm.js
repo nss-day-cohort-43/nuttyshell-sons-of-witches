@@ -46,7 +46,7 @@ eventHub.addEventListener("click", clickEvent => {
 export const renderEventForm = () => {
     contentEventTarget.innerHTML = `
     <section class="event-form">
-    <h3>Add Event</h3>
+    <h3 class="addEventHeader">Event List</h3>
         <fieldset>
         <label>Title</label>
         <input type="text"

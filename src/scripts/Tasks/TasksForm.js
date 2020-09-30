@@ -4,7 +4,8 @@ const contentTarget = document.querySelector(".tasks")
 
 export const renderTasksForm = () => {
     contentTarget.innerHTML = `
-    <h2>Create a Task:</h2>
+    <section class="tasksContainer">
+    <h3 class="tasksHeader">Task List</h3>
     <div class="tasksForm">
         <fieldset>
             <label>Title:</label>
@@ -32,7 +33,7 @@ export const renderTasksForm = () => {
 
         <h2>Completed Task:</h2>
         <div id="completedTasks"></div>
-        
+    </section>
 `
 }
 

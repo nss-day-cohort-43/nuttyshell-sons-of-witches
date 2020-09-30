@@ -11,23 +11,42 @@
 
 <body>
     <article class="container">
-        <article class="auth">
-            <section class="auth--login"></section>
-            <section class="auth--register"></section>
-        </article>
+        <div class="row1">
+            <article class="auth">
+                <div class="existingUsersContainer">
+                    <H3 class="existingUser">Existing Users</H3>
+                    <p class="existingUserInstructions">If you already have an account, please enter your username and
+                        click
+                        the Log In but here</p>
+                    <section class="auth--login"></section>
+                </div>
+
+                <div class="newUserContainer">
+                    <H3 class="newUser">New Users</H3>
+                    <p class="newUserInstructions">If you're a new user, please enter your email address and preferred
+                        username and then click the Register button</p>
+                    <section class="auth--register"></section>
+                </div>
+            </article>
+        </div>
         <article class="dashboard">
 
             <section class="user"></section>
 
-            <section class="events"></section>
+            <div class="row2">
+                <section class="events"></section>
+                <section class="tasks"></section>
+            </div>
 
-            <section class="tasks"></section>
+            <div class="row3">
+                <section class="chat"></section>
+                <section class="friends"></section>
+            </div>
 
-            <section class="chat"></section>
-
-            <section class="friends"></section>
-
-            <section class="articles"></section>
+            <div class="row4">
+                <section class="articles"></section>
+                <section id="articleList"></section>
+            </div>
 
         </article>
     </article>
