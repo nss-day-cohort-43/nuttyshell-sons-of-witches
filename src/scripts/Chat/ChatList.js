@@ -50,7 +50,6 @@ eventHub.addEventListener("click", event => {
     }
 });
 
-//Working on Add Friend Button here/////////////////////////
 eventHub.addEventListener("click", event => {
     if (event.target.id.startsWith("chatMessagePoster")) {
 

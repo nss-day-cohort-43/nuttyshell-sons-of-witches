@@ -1,5 +1,5 @@
 /* Login Styling Start */
-/* .auth {
+.auth {
     display: flex;
     flex-flow: column ;
     font-size: 24pt;
@@ -42,16 +42,102 @@
 .row1 {
     display:flex;
     justify-content: center;
-} */
+}
 /* Login Styling End */
 
 /*///////////////////////////////////////////////////////*/
+
+/* Events AND Tasks Styling Start */
+.row2 {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    margin-top: 2em;
+}
+/* Events AND Tasks Styling End */
+
+/*/////////////////////////////////////////////////////*/
+
+/* Events Styling Start */
+.addEventHeader {
+    text-align: center;
+    font-size: 22pt;
+    color: white;
+}
+
+.chatHeader {
+    text-align: center;
+    font-size: 22pt;
+    margin-top: 1em;
+    color: white;
+}
+
+.event-form {
+    display: flex;
+    flex-flow: column;
+    width: 35em;
+    height: 40em;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    font-weight: 800;
+    background-color:#575757;
+    color: white;
+}
+
+#saveEvent {
+    font-size: 14pt;
+    width: 10em;
+    height: 1.75em;
+    background-color: lightgreen;
+}
+
+#show-Weather {
+    font-size: 14pt;
+    width: 10em;
+    height: 1.75em;
+    margin-left: 5.5em;
+    background-color: plum;
+}
+/* Events Styling End */
+
+/*///////////////////////////////////////////////////////*/
+
+/* Tasks Styling Start */
+.tasksContainer {
+    display: flex;
+    flex-flow: column;
+    width: 35em;
+    height: 40em;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    font-weight: 800;
+    background-color:#575757;
+    color: white;
+}
+
+.tasksHeader {
+    text-align: center;
+    font-size: 22pt;
+    margin-top: 1em;
+    color: white;
+}
+
+#tasksSaveBtn {
+    font-size: 14pt;
+    width: 10em;
+    height: 1.75em;
+    background-color: lightgreen;
+}
+/* Tasks Styling End */
 
 /* Chat AND Friends Styling Start */
 .row3 {
     display: flex;
     flex-flow: row;
     justify-content: space-around;
+    margin-top: 2em;
 }
 /* Chat AND Friends Styling End */
 
@@ -66,7 +152,6 @@
     font-size: 14pt;
     font-weight: 500;
     width: 10em;
-    margin-left: 5.5em;
     background-color: lightgreen;
 }
 
@@ -84,7 +169,7 @@
 .chatContainer {
     display: flex;
     flex-flow: column;
-    width: 25em;
+    width: 35em;
     height: 40em;
     border: 2px;
     border-color: black;
@@ -158,10 +243,11 @@
     font-size: 14pt;
     width: 10em;
     height: 1.75em;
-    margin-left: 5.5em;
     background-color: lightgreen;
 }
 /* Chat Styling End */
+
+/*//////////////////////////////////////////////////////////////*/
 
 /* Friends Styling Start */
 .deleteFriend {
@@ -210,7 +296,7 @@
 .friendsContainer {
     display: flex;
     flex-flow: column;
-    width: 25em;
+    width: 35em;
     height: 40em;
     border: 2px;
     border-color: black;
@@ -226,41 +312,72 @@
     overflow: auto;
     margin-top: .75em;
 }
-
 /* Friends Styling End */
 
-/* Events AND Tasks Styling Start */
-/* .row2 {
+/*//////////////////////////////////////////////////////////////*/
+
+/* News Articles Styling Start */
+.row4 {
     display: flex;
     flex-flow: row;
-    justify-content: space-around;
-} */
-/* Events AND Tasks Styling End */
+    justify-content: center;
+    margin-top: 2em;
+}
+/* News Articles Styling End */
+/*//////////////////////////////////////////////////////////////*/
+/* Add News Articles Styling Start */
+.articleForm {
+    display: flex;
+    flex-flow: column;
+    width: 35em;
+    height: 20em;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    font-weight: 800;
+    background-color:#575757;
+    color: white
+}
 
-/*/////////////////////////////////////////////////////*/
-
-/* Events Styling Start */
-/* .chatHeader {
+.addArticlesHeader {
     text-align: center;
     font-size: 22pt;
     margin-top: 1em;
-    color: white;
+    color: white
 }
 
-.event-form {
+#articleSaveBtn {
+    margin-top: 1em;
+    font-size: 14pt;
+    width: 10em;
+    height: 1.75em;
+    background-color: lightgreen;
+}
+/* Add News Articles Styling End */
+/*//////////////////////////////////////////////////////////////*/
+/* Published News Articles Styling Start */
+.publishedArticles {
     display: flex;
     flex-flow: column;
-    width: 25em;
+    width: 35em;
     height: 40em;
     border: 2px;
     border-color: black;
     border-style: solid;
     font-weight: 800;
     background-color:#575757;
-    color: white;
-} */
-/* Events Styling End */
+    color: white
+}
 
-/*///////////////////////////////////////////////////////*/
+.articlesHeader {
+    text-align: center;
+    font-size: 22pt;
+    margin-top: 1em;
+}
 
-/* Tasks Styling Start
+.articlesHeader {
+    text-align: center;
+    font-size: 22pt;
+    margin-top: 1em;
+}
+/* Published News Articles Styling End */

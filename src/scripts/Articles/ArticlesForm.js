@@ -8,7 +8,7 @@ const contentTarget = document.querySelector(".articles")
 export const renderArticleForm = () => {
     contentTarget.innerHTML = `
     <div class="articleForm">
-        <h3>Add News Article</h3>
+            <h3 class="addArticlesHeader">Add News Article</h3>
         <fieldset>
             <label>Title</label>
             <input type="text" id="articleTitle">
@@ -25,7 +25,7 @@ export const renderArticleForm = () => {
             <button id="articleSaveBtn">Save</button>
         </fieldset>
         </div>
-        <h3>Articles</h3>
+        <h3 class="articlesHeader">Articles</h3>
         <div id="articleList"></div> 
 
 `
@@ -33,9 +33,9 @@ export const renderArticleForm = () => {
 
 /* Event Listener that will pass an object to the saveArticles
    function if the target.id is equal to the ID of articleSaveBtn
-*/    
+*/
 eventHub.addEventListener("click", event => {
-    if(event.target.id === "articleSaveBtn"){
+    if (event.target.id === "articleSaveBtn") {
         const newArticelObj = {
             userId: parseInt(sessionStorage.getItem("userId")),
             title: document.querySelector("#articleTitle").value,
