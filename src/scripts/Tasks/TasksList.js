@@ -22,8 +22,9 @@ const tasksHTML = (tasksObj) => {
 
 const render = () => {
     const contentTarget = document.querySelector("#tasksList")
-    contentTarget.innerHTML = useTasks().map(tasks => {
-        return tasksHTML(tasks)
+
+    contentTarget.innerHTML = useTasks().map(task => {
+        return tasksHTML(task)
     }).join("")
 }
       
@@ -92,14 +93,28 @@ eventHub.addEventListener("click", event => {
     }
 })
 
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+
 eventHub.addEventListener("click", event => {
     if(event.target.id.startsWith("completeTasks")){
+        // let completedTasks = tasks.filter(task => task.complete === true)
         const [prefix, id] = event.target.id.split("--")
-        const completeTasksObj = {
-            id: parseInt(id),
-            // complete: document.querySelector("#completeTasks").value,
-        }
-        completeTasks(completeTasksObj.id)
+        completeTasks(id)
     }
 })
 
+
+
+
+
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o

@@ -11,17 +11,43 @@ export const tasksDispatchStateChangeEvent = () => {
     eventHub.addEventListener("tasksStateChanged", event => {
         tasksList()
 })
-
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
 export const getTasks = () => {
     return fetch(`http://localhost:8088/tasks?_expand=user`)
         .then(response => response.json())
         .then(parsedTasks => {
             tasks = parsedTasks
+            // .filter(tasks.complete === false)
         })
 }
 
+// let isTaskComplete = tasks.filter(tasksFilter)
+
+// // api
+// let tasks = [
+//     { complete: true }]
+// // api
+
+//     function tasksFilter() {
+//         if (tasks.complete === true) {
+//             return
+//         } 
+
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+    // // if else filter by complete in useTasks or new function
+    // const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+    // const result = words.filter(word => word.length > 6);
+
 export const useTasks = () => {
-    return tasks.slice()
+    return tasks.filter(task => task.complete === false)
 }
 
 export const saveTasks = (tasksObj) => {
@@ -61,8 +87,13 @@ export const editTasks = (id, title, summary, date) => {
 .then(tasksDispatchStateChangeEvent)
 }
 
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+
 export const completeTasks = (id) => {
-    const completeTasksObj = document.querySelector.tasks.id
     return fetch(`http://localhost:8088/tasks/${id}`, {
         method: "PATCH",
         headers: {
@@ -72,20 +103,19 @@ export const completeTasks = (id) => {
             complete: true,       
         }),
     })
-        .then (completeTasksObj.remove())
-        .then(response => response.json())
-        .then(getTasks)
-        .then(dispatchStateChangeEvent);
-        
+    .then(response => response.json())
+    .then(getTasks)
+    .then(tasksDispatchStateChangeEvent);
 };
 
 
 
-// var myobj = document.getElementById("demo");
-// myobj.remove();
 
-//   function removeElement(elementId) {
-//     // Removes an element from the document
-//     var element = document.getElementById(elementId);
-//     element.parentNode.removeChild(element);
-// }
+
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
+// o0o0o0o0o0o0o0o0oo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o
