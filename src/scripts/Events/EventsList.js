@@ -4,6 +4,7 @@ import { useEvents, getEvents, deleteEvent, saveEvents, editEvent} from "./Event
 const contentTarget = document.querySelector(".events");
 const eventHub = document.querySelector(".dashboard");
 
+// An eventListener that listens for the ave button to be click on by the user
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === ("saveEvent")) {
         const saveButtonObj = {
@@ -18,6 +19,7 @@ eventHub.addEventListener("click", clickEvent => {
     }
 });
 
+// An eventListener that listens for the delete button to be click on by the user
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("deleteEvent")) {
         const [prefix, id] = clickEvent.target.id.split("--")

@@ -3,6 +3,7 @@ import { useEvents, getEvents, saveEvents } from "./EventsDataProvider.js";
 const contentEventTarget = document.querySelector(".events");
 const eventHub = document.querySelector(".dashboard");
 
+// creates an event when the save button is clicked
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "submitEvent") {
 
@@ -17,6 +18,7 @@ eventHub.addEventListener("click", clickEvent => {
     }
 });
 
+// create the Event form for the user to fill out the details of an event
 export const renderEventForm = () => {
     contentEventTarget.innerHTML = `
     <section class="event-form">
