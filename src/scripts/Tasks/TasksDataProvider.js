@@ -17,11 +17,11 @@ export const getTasks = () => {
         .then(response => response.json())
         .then(parsedTasks => {
             tasks = parsedTasks
-        })
+        }) 
 }
 
 export const useTasks = () => {
-    return tasks.slice()
+    return tasks.filter(task => task.complete === false)
 }
 
 export const saveTasks = (tasksObj) => {
@@ -61,6 +61,17 @@ export const editTasks = (id, title, summary, date) => {
 .then(tasksDispatchStateChangeEvent)
 }
 
-export const completeTasks = () => {
-
-}
+export const completeTasks = (id) => {
+    return fetch(`http://localhost:8088/tasks/${id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            complete: true,       
+        }),
+    })
+    .then(response => response.json())
+    .then(getTasks)
+    .then(tasksDispatchStateChangeEvent);
+};
