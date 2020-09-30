@@ -1,12 +1,10 @@
-
 //Author:  Braxton Shoop
-//Module Purpose:  Populates the saved Chat messages on the DOM
+//Module Purpose:  Enables the user to save, edit, or delete chat messages 
 
 import { getChat, useChat, deleteChat, editChat } from './ChatDataProvider.js';
 
 const eventHub = document.querySelector(".container");
 let contentTarget2
-
 
 const render = () => {
     const contentTarget = document.querySelector(".messagesList")

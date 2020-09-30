@@ -2,10 +2,12 @@ import { articleList } from "./ArticlesList.js"
 
 const eventHub = document.querySelector(".container")
 
+
+
 /* Creation of custom event which allows a refresh to happen
     without the user hitting the refresh command
 */
-const dispatchStateChangeEvent = () => {
+const dispatchStateChangeArticle = () => {
     const articleStateChangedEvent = new CustomEvent("articleStateChanged")
 
     eventHub.dispatchEvent(articleStateChangedEvent)
@@ -44,7 +46,7 @@ export const saveArticles = (articlesObj) => {
         body: JSON.stringify(articlesObj)
     })
     .then(getArticles)
-    .then(dispatchStateChangeEvent)
+    .then(dispatchStateChangeArticle)
 }
 
 /* Function that takes the articles and makes a copy to be used */
@@ -60,7 +62,7 @@ export const deleteArticle = (id) => {
         method: 'DELETE'
     })
     .then(getArticles)
-    .then(dispatchStateChangeEvent)
+    .then(dispatchStateChangeArticle)
 }
 
 /* Function that edits the article in the database. Then
@@ -79,5 +81,5 @@ export const editArticle = (id, title, summary, URL) => {
         })
     })
     .then(getArticles)
-    .then(dispatchStateChangeEvent)
+    .then(dispatchStateChangeArticle)
 }

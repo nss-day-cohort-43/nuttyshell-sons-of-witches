@@ -1,4 +1,44 @@
-.chat {
+.auth {
+    display: flex;
+    flex-flow: column ;
+    font-size: 24pt;
+}
+
+.existingUser {
+    font-size: 24pt;
+}
+
+.newUser {
+    font-size: 24pt;
+}
+
+.existingUserInstructions {
+    font-size: 14pt;
+}
+
+.newUserInstructions {
+    font-size: 14pt;
+}
+
+.existingUsersContainer {
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    width: 22em;
+    padding-left: 1em;
+    padding-bottom: 1em;
+}
+
+.newUserContainer {
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    width: 22em;
+    padding-left: 1em;
+    padding-bottom: 1em;
+}
+
+.chatContainer {
     display: flex;
     flex-flow: column;
     width: 25em;
