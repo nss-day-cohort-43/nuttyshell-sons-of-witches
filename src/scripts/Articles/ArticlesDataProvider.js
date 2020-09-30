@@ -45,8 +45,8 @@ export const saveArticles = (articlesObj) => {
         },
         body: JSON.stringify(articlesObj)
     })
-    .then(getArticles)
-    .then(dispatchStateChangeArticle)
+        .then(getArticles)
+        .then(dispatchStateChangeArticle)
 }
 
 /* Function that takes the articles and makes a copy to be used */
@@ -61,8 +61,8 @@ export const deleteArticle = (id) => {
     return fetch(`http://localhost:8088/articles/${id}`, {
         method: 'DELETE'
     })
-    .then(getArticles)
-    .then(dispatchStateChangeArticle)
+        .then(getArticles)
+        .then(dispatchStateChangeArticle)
 }
 
 /* Function that edits the article in the database. Then
@@ -80,6 +80,6 @@ export const editArticle = (id, title, summary, URL) => {
             URL: URL
         })
     })
-    .then(getArticles)
-    .then(dispatchStateChangeArticle)
+        .then(getArticles)
+        .then(dispatchStateChangeArticle)
 }

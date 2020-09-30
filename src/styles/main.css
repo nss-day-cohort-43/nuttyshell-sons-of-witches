@@ -59,6 +59,10 @@
 /*/////////////////////////////////////////////////////*/
 
 /* Events Styling Start */
+.current-event {
+    overflow: auto;
+}
+
 .addEventHeader {
     text-align: center;
     font-size: 22pt;

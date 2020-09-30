@@ -11,8 +11,7 @@ export const eventHTML = (eventObj) => {
             <div>Location: ${eventObj.location}</div>
             <div>Time: ${eventObj.time}</div>
             <div>Date: ${eventObj.date}</div>${checkUserId(eventObj)}
-            <br>
-            <button type="button" id="show-Weather">Show Weather</button>
+            
         </section>
     `
 };
@@ -47,7 +46,7 @@ eventHub.addEventListener("click", clickEvent => {
     }
 });
 
-eventHub.addEventListener("click", clickEvent =>{
+eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "edit-cancel") {
         eventList()
     }

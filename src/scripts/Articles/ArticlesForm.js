@@ -8,7 +8,7 @@ const contentTarget = document.querySelector(".articles")
 export const renderArticleForm = () => {
     contentTarget.innerHTML = `
     <div class="articleForm">
-            <h3 class="addArticlesHeader">Add News Article</h3>
+        <h3>Add News Article</h3>
         <fieldset>
             <label>Title</label>
             <input type="text" id="articleTitle">
@@ -25,8 +25,9 @@ export const renderArticleForm = () => {
             <button id="articleSaveBtn">Save</button>
         </fieldset>
         </div>
-        <h3 class="articlesHeader">Articles</h3>
+        <h3>Articles</h3>
         <div id="articleList"></div> 
+
 `
 }
 
