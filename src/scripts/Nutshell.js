@@ -6,6 +6,7 @@ import { chatList } from './Chat/ChatList.js'
 import { tasksList } from './Tasks/TasksList.js'
 import { renderTasksForm } from './Tasks/TasksForm.js'
 import { renderEventForm } from "./Events/EventsForm.js"
+import { renderFriend } from './Friends/FriendsForm.js'
 
 export const Nutshell = () => {
     articleList();
@@ -16,4 +17,5 @@ export const Nutshell = () => {
     renderTasksForm();
     tasksList();
     renderEventForm();
+    renderFriend()
 }

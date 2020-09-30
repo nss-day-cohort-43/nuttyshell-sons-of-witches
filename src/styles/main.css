@@ -1,9 +1,177 @@
-@import "./Events.css";
+/* @import "./Events.css"; */
 
-.chat {
+Login Styling Start */
+.auth {
+    display: flex;
+    flex-flow: column ;
+    font-size: 24pt;
+}
+
+.existingUser {
+    font-size: 24pt;
+}
+
+.existingUserInstructions {
+    font-size: 14pt;
+}
+
+.existingUsersContainer {
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    width: 22em;
+    padding-left: 1em;
+    padding-bottom: 1em;
+}
+
+.newUser {
+    font-size: 24pt;
+}
+
+.newUserContainer {
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    width: 22em;
+    padding-left: 1em;
+    padding-bottom: 1em;
+}
+
+.newUserInstructions {
+    font-size: 14pt;
+}
+
+.row1 {
+    display:flex;
+    justify-content: center;
+}
+/* Login Styling End */
+
+/*///////////////////////////////////////////////////////*/
+
+/* Events AND Tasks Styling Start */
+.row2 {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    margin-top: 2em;
+}
+/* Events AND Tasks Styling End */
+
+/*/////////////////////////////////////////////////////*/
+
+/* Events Styling Start */
+.addEventHeader {
+    text-align: center;
+    font-size: 22pt;
+    color: white;
+}
+
+.chatHeader {
+    text-align: center;
+    font-size: 22pt;
+    margin-top: 1em;
+    color: white;
+}
+
+.event-form {
     display: flex;
     flex-flow: column;
-    width: 25em;
+    width: 35em;
+    height: 40em;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    font-weight: 800;
+    background-color:#575757;
+    color: white;
+}
+
+#saveEvent {
+    font-size: 14pt;
+    width: 10em;
+    height: 1.75em;
+    background-color: lightgreen;
+}
+
+#show-Weather {
+    font-size: 14pt;
+    width: 10em;
+    height: 1.75em;
+    margin-left: 5.5em;
+    background-color: plum;
+}
+/* Events Styling End */
+
+/*///////////////////////////////////////////////////////*/
+
+/* Tasks Styling Start */
+.tasksContainer {
+    display: flex;
+    flex-flow: column;
+    width: 35em;
+    height: 40em;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    font-weight: 800;
+    background-color:#575757;
+    color: white;
+}
+
+.tasksHeader {
+    text-align: center;
+    font-size: 22pt;
+    margin-top: 1em;
+    color: white;
+}
+
+#tasksSaveBtn {
+    font-size: 14pt;
+    width: 10em;
+    height: 1.75em;
+    background-color: lightgreen;
+}
+/* Tasks Styling End */
+
+/* Chat AND Friends Styling Start */
+.row3 {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    margin-top: 2em;
+}
+/* Chat AND Friends Styling End */
+
+/*///////////////////////////////////////////////////////*/
+
+/* Chat Styling Start */
+#addFriend {
+    margin-top: 1em;
+    font-size: 14pt;
+    height: 1.75em;
+    width: auto;
+    font-size: 14pt;
+    font-weight: 500;
+    width: 10em;
+    background-color: lightgreen;
+}
+
+.chatButtons {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+}
+
+.chatButtonsWithEdit {
+    display: flex;
+    flex-flow: column;
+}
+
+.chatContainer {
+    display: flex;
+    flex-flow: column;
+    width: 35em;
     height: 40em;
     border: 2px;
     border-color: black;
@@ -19,13 +187,38 @@
     color: white;
 }
 
-.chatButtons {
-    display: flex;
-    justify-content: space-around;
-}
-
 .chatPoster {
     text-align: right;
+}
+
+.deleteMessage {
+    height: 2em;
+    width: 12.5em;
+    font-size: 11pt;
+    font-weight: 600;
+    background-color: #FBC6C6;
+}
+
+.editChatContainer {
+    background-color: white;
+    margin-top: -1.5em;
+}
+
+.editMessage {
+    height: 2em;
+    width: 12.5em;
+    font-size: 11pt;
+    font-weight: 600;
+    background-color: lightskyblue;
+}
+
+.messagesContainer {
+    width: auto;
+    height: auto;
+    font-size: 14pt;
+    line-height: 1.5;
+    margin-top: 1em;
+    background-color: #FFFFFF;
 }
 
 .messageControls {
@@ -34,20 +227,9 @@
     justify-content: space-between;
 }
 
-.deleteMessage {
-    height: 2em;
-    width: 12.5em;
-    font-size: 11pt;
-    font-weight: 600;
-    background-color: lightcoral;
-}
-
-#editMessage {
-    height: 2em;
-    width: 12.5em;
-    font-size: 11pt;
-    font-weight: 600;
-    background-color: lightskyblue;
+.messagesList {
+    margin-top: 1em;
+    overflow: auto;
 }
 
 .newMessage {
@@ -62,19 +244,142 @@
     margin-top: 1em;
     font-size: 14pt;
     width: 10em;
-    margin-left: 5.5em;
+    height: 1.75em;
     background-color: lightgreen;
 }
+/* Chat Styling End */
 
-.messagesContainer {
-    width: auto;
-    height: auto;
-    font-size: 14pt;
-    line-height: 1.5;
+/*//////////////////////////////////////////////////////////////*/
+
+/* Friends Styling Start */
+.deleteFriend {
+    align-self: right;
+    height: 2em;
+    width: 12.5em;
+    font-size: 11pt;
+    font-weight: 600;
+    background-color: #FBC6C6;
+}
+
+.deleteFriendParentContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.friendEmail {
     margin-top: 1em;
-    background-color: #FFFFFF;
+    font-size: 14pt;
+    height: 1.75em;
+    width: auto;
+    font-size: 14pt;
+    font-weight: 500;
 }
 
-.messagesList {
-    overflow: auto;
+.friendHeader {
+    text-align: center;
+    font-size: 22pt;
+    margin-top: 1em;
+    color: white;
 }
+
+.friendUsername {
+    margin-top: .25em;
+    height: 1.75em;
+    width: auto;
+    font-size: 14pt;
+    font-weight: 500;
+}
+
+.friendsCard {
+    background-color: white;
+    margin-top: 1em;
+}
+
+.friendsContainer {
+    display: flex;
+    flex-flow: column;
+    width: 35em;
+    height: 40em;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    font-weight: 800;
+    background-color:#575757;
+}
+
+.friendsList {
+    color: black;
+    background-color:#575757;
+    line-height: 1.5;
+    overflow: auto;
+    margin-top: .75em;
+}
+/* Friends Styling End */
+
+/*//////////////////////////////////////////////////////////////*/
+
+/* News Articles Styling Start */
+.row4 {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    margin-top: 2em;
+}
+/* News Articles Styling End */
+/*//////////////////////////////////////////////////////////////*/
+/* Add News Articles Styling Start */
+.articleForm {
+    display: flex;
+    flex-flow: column;
+    width: 35em;
+    height: 20em;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    font-weight: 800;
+    background-color:#575757;
+    color: white
+}
+
+.addArticlesHeader {
+    text-align: center;
+    font-size: 22pt;
+    margin-top: 1em;
+    color: white
+}
+
+#articleSaveBtn {
+    margin-top: 1em;
+    font-size: 14pt;
+    width: 10em;
+    height: 1.75em;
+    background-color: lightgreen;
+}
+/* Add News Articles Styling End */
+/*//////////////////////////////////////////////////////////////*/
+/* Published News Articles Styling Start */
+.publishedArticles {
+    display: flex;
+    flex-flow: column;
+    width: 35em;
+    height: 40em;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    font-weight: 800;
+    background-color:#575757;
+    color: white
+}
+
+.articlesHeader {
+    text-align: center;
+    font-size: 22pt;
+    margin-top: 1em;
+}
+
+.articlesHeader {
+    text-align: center;
+    font-size: 22pt;
+    margin-top: 1em;
+}
+/* Published News Articles Styling End */

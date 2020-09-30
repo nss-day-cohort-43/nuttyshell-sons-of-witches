@@ -22,8 +22,9 @@ const tasksHTML = (tasksObj) => {
 
 const render = () => {
     const contentTarget = document.querySelector("#tasksList")
-    contentTarget.innerHTML = useTasks().map(tasks => {
-        return tasksHTML(tasks)
+
+    contentTarget.innerHTML = useTasks().map(task => {
+        return tasksHTML(task)
     }).join("")
 }
       
@@ -92,10 +93,11 @@ eventHub.addEventListener("click", event => {
     }
 })
 
-
-
 eventHub.addEventListener("click", event => {
-    if(event.target.id === "taskComplete"){
-
+    if(event.target.id.startsWith("completeTasks")){
+        // let completedTasks = tasks.filter(task => task.complete === true)
+        const [prefix, id] = event.target.id.split("--")
+        completeTasks(id)
     }
 })
+

@@ -1,4 +1,4 @@
-// The rendering of HTML weather forecast 
+//A function that uses the argument from the renderWeather function in weatherList.js and creates the the HTML form using the info. that was given as an argument.
 export const WeatherHTML = (weatherObj) => {
     return `
         <section class="weather-card"> 
