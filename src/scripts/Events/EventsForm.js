@@ -3,32 +3,7 @@ import { useEvents, getEvents, saveEvents } from "./EventsDataProvider.js";
 const contentEventTarget = document.querySelector(".events");
 const eventHub = document.querySelector(".dashboard");
 
-eventHub.addEventListener("change", e => {
-    if (e.target.id === "eventSelect") {
-
-        const customEvent = new CustomEvent("eventChosen", {
-            detail: {
-                eventThatWasChosen: e.target.value,
-                chosenEventId: parseInt(e.target.id)
-            }
-        })
-        eventHub.dispatchEvent(customEvent);
-    }
-});
-
-const renderEvents = (eventCollection) => {
-    contentEventTarget.innerHTML = `
-        <select class="dropdown" id="eventSelect">
-            <option value="0">Select A Event ...</option>
-    
-        ${eventCollection.map(eventObj => {
-        return `<option id="eventSelect${eventObj.name}" value="${eventObj.id}">${eventObj.eventName}</option>`;
-    })
-        } 
-     </select> 
-    `
-};
-
+// creates an event when the save button is clicked
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "submitEvent") {
 
@@ -43,6 +18,7 @@ eventHub.addEventListener("click", clickEvent => {
     }
 });
 
+// create the Event form for the user to fill out the details of an event
 export const renderEventForm = () => {
     contentEventTarget.innerHTML = `
     <section class="event-form">

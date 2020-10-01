@@ -1,4 +1,6 @@
-/* Login Styling Start */
+/* @import "./Events.css"; */
+
+Login Styling Start */
 .auth {
     display: flex;
     flex-flow: column ;
@@ -70,7 +72,7 @@
     font-size: 22pt;
     margin-top: 1em;
     color: white;
-}
+} */
 
 .event-form {
     display: flex;
