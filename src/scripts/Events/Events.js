@@ -11,8 +11,7 @@ export const eventHTML = (eventObj) => {
             <div>Location: ${eventObj.location}</div>
             <div>Time: ${eventObj.time}</div>
             <div>Date: ${eventObj.date}</div>${checkUserId(eventObj)}
-            <br>
-            <button type="button" id="show-Weather">Show Weather</button>
+            
         </section>
     `
 };
@@ -76,38 +75,33 @@ const editEventForm = (eventObj) => {
     <h3>Edit Event</h3>
         <fieldset>
         <label>Title</label>
-        <input type="text"
-        id="edit-title" value="${eventObj.title}"></input>
+        <input type="text" id="edit-title" value="${eventObj.title}">
         </fieldset>
 
         <fieldset>
         <label>Description</label>
-        <input type="text"
-        id="edit-description" value="${eventObj.description}"></input>
+        <input type="text" id="edit-description" value="${eventObj.description}">
         </fieldset>
 
         <fieldset>
         <label>Location</label>
-        <input type="text"
-        id="edit-location" value="${eventObj.location}"></input>
+        <input type="text" id="edit-location" value="${eventObj.location}">
         </fieldset>
 
         <fieldset>
         <label>Time</label>
-        <input type="time"
-        id="edit-time" value="${eventObj.time}"></input>
+        <input type="time" id="edit-time" value="${eventObj.time}">
         </fieldset>
 
         <fieldset>
         <label>Date</label>
-        <input type="date"
-        id="edit-date" value="${eventObj.date}"></input>
+        <input type="date" id="edit-date" value="${eventObj.date}">
         </fieldset>
     
         <br>
         <button type="submit" id="edit2-event--${eventObj.id}">Save Event</button>
         <button type="button" id="edit-cancel">Cancel Edit</button>
         <div class="current-event"></div>
-    </div>
+    </section>
     `
 };

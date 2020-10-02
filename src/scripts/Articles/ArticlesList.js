@@ -107,7 +107,7 @@ const editForm = (articleObject) => {
     function and pass the information.
  */
 eventHub.addEventListener("click", event => {
-    if(event.target.id.startsWith("editBtn")){
+    if (event.target.id.startsWith("editBtn")) {
         const [prefix, id] = event.target.id.split("--")
         const editArticelObj = {
             id: parseInt(id),
@@ -123,7 +123,7 @@ eventHub.addEventListener("click", event => {
     If the button is clicked it will call the articleList function.
  */
 eventHub.addEventListener("click", event => {
-    if(event.target.id === "editCancel"){
+    if (event.target.id === "editCancel") {
         articleList()
     }
 })

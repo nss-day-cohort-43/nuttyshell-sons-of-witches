@@ -1,4 +1,4 @@
-/* @import "./Events.css"; */
+@import "./Events.css";
 
 Login Styling Start */
 .auth {
@@ -59,51 +59,6 @@ Login Styling Start */
 /* Events AND Tasks Styling End */
 
 /*/////////////////////////////////////////////////////*/
-
-/* Events Styling Start */
-.addEventHeader {
-    text-align: center;
-    font-size: 22pt;
-    color: white;
-}
-
-.chatHeader {
-    text-align: center;
-    font-size: 22pt;
-    margin-top: 1em;
-    color: white;
-} */
-
-.event-form {
-    display: flex;
-    flex-flow: column;
-    width: 35em;
-    height: 40em;
-    border: 2px;
-    border-color: black;
-    border-style: solid;
-    font-weight: 800;
-    background-color:#575757;
-    color: white;
-}
-
-#saveEvent {
-    font-size: 14pt;
-    width: 10em;
-    height: 1.75em;
-    background-color: lightgreen;
-}
-
-#show-Weather {
-    font-size: 14pt;
-    width: 10em;
-    height: 1.75em;
-    margin-left: 5.5em;
-    background-color: plum;
-}
-/* Events Styling End */
-
-/*///////////////////////////////////////////////////////*/
 
 /* Tasks Styling Start */
 .tasksContainer {
