@@ -2,7 +2,7 @@ import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
 
-import { friendList } from './Friends/FriendsList.js'
+//import { friendList } from './Friends/FriendsList.js'
 
 //import { dummyLogin } from './Nutshell.js'
 /*
@@ -13,7 +13,7 @@ import { friendList } from './Friends/FriendsList.js'
         ensure that the Nutshell component gets rendered
 */
 
-friendList()
+//friendList()
 
 LoginForm();
 RegisterForm();

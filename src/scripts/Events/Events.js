@@ -1,12 +1,12 @@
 import { eventList } from "./EventsList.js";
 import { editEvent, useEvents } from "./EventsDataProvider.js";
 
-//Takes the argument from the render function in EvntList.js and creates the the HTML form using the info. that was passed as an argument. 
+//A function that uses the argument from the render function in EventList.js and creates the the HTML form using the info. that was given as an argument. 
 export const eventHTML = (eventObj) => {
     return ` 
         <section id="event-card"
         class="event-card">
-            <h2>${eventObj.name}</h2>
+            <h2>${eventObj.title}</h2>
             <div>Description: ${eventObj.description}
             <div>Location: ${eventObj.location}</div>
             <div>Time: ${eventObj.time}</div>
@@ -16,6 +16,7 @@ export const eventHTML = (eventObj) => {
     `
 };
 
+// A function that adds a Delete and Edit button to each Event created by the user logged in specifically to the session. 
 const checkUserId = (eventObj) => {
     let userId = sessionStorage.getItem("userId")
     if (parseInt(userId) === eventObj.userId) {
@@ -31,6 +32,7 @@ const checkUserId = (eventObj) => {
 
 const eventHub = document.querySelector(".dashboard");
 
+// An eventListener to check if the edit button of an event that exist by the user to call the editEvent function.
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("edit2-event")) {
         const [prefix, id] = clickEvent.target.id.split("--")
@@ -46,6 +48,7 @@ eventHub.addEventListener("click", clickEvent => {
     }
 });
 
+// An eventListener that listens for the edit cancel button to be clicked on by the creater of an event to cancel the edit by calling th eventList
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "edit-cancel") {
         eventList()
@@ -72,38 +75,33 @@ const editEventForm = (eventObj) => {
     <h3>Edit Event</h3>
         <fieldset>
         <label>Title</label>
-        <input type="text"
-        id="edit-title" value="${eventObj.title}"></input>
+        <input type="text" id="edit-title" value="${eventObj.title}">
         </fieldset>
 
         <fieldset>
         <label>Description</label>
-        <input type="text"
-        id="edit-description" value="${eventObj.description}"></input>
+        <input type="text" id="edit-description" value="${eventObj.description}">
         </fieldset>
 
         <fieldset>
         <label>Location</label>
-        <input type="text"
-        id="edit-location" value="${eventObj.location}"></input>
+        <input type="text" id="edit-location" value="${eventObj.location}">
         </fieldset>
 
         <fieldset>
         <label>Time</label>
-        <input type="time"
-        id="edit-time" value="${eventObj.time}"></input>
+        <input type="time" id="edit-time" value="${eventObj.time}">
         </fieldset>
 
         <fieldset>
         <label>Date</label>
-        <input type="date"
-        id="edit-date" value="${eventObj.date}"></input>
+        <input type="date" id="edit-date" value="${eventObj.date}">
         </fieldset>
     
         <br>
         <button type="submit" id="edit2-event--${eventObj.id}">Save Event</button>
         <button type="button" id="edit-cancel">Cancel Edit</button>
         <div class="current-event"></div>
-    </div>
+    </section>
     `
 };
